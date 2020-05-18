@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student</title>
+    <link rel="stylesheet" href="./student.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="inputData">
+        <h5>Name :</h5>
+        <input id="name" type="text" placeholder="Student Name" />
+        <h5>Maths :</h5>
+        <input id="mathsPoint" type="number" placeholder="Maths Point" />
+        <h5>Physical :</h5>
+        <input id="physicalPoint" type="number" placeholder="Physical Point" />
+        <h5>Chemistry :</h5>
+        <input
+          id="chemistryPoint"
+          type="number"
+          placeholder="Chemistry Point"
+        />
+        <div>
+          <button id="submitForm" type="button">Submit</button>
+          <button id="showAVG" type="button">Show AVG</button>
+          <button id="showBest" type="button">Show Best</button>
+          <button id="save" type="button">Save</button>
+        </div>
+        <h4 id="error"></h4>
+      </div>
+      <div id="divShow" class="showStudent">
+        <table id="tbSt"></table>
+      </div>
+    </div>
+    <script src="./student.js"></script>
+  </body>
+</html>
