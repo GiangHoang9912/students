@@ -184,9 +184,6 @@ const checkBest = () => {
 };
 
 document.getElementById("save").addEventListener("click", (e) => {
-  document.getElementById("submitForm").disabled = false;
-  document.getElementById("showAVG").disabled = false;
-  document.getElementById("showBest").disabled = false;
   for (const student of students) {
     if (student.id == currentEditStudentId) {
       const name = document.getElementById("name").value;
@@ -205,6 +202,9 @@ document.getElementById("save").addEventListener("click", (e) => {
 
         showToBrowser(students);
         clearTextBox();
+        document.getElementById("submitForm").disabled = false;
+        document.getElementById("showAVG").disabled = false;
+        document.getElementById("showBest").disabled = false;
 
         document.getElementById("save").style.visibility = "hidden";
 
