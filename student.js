@@ -15,25 +15,25 @@ const checkValidate = (name, maths, physical, chemistry) => {
   }
   if (maths < 0 || !maths) {
     err += "maths must be letter than 0 \n";
-    document.querySelector("#mathsPoint").setAttribute("class", "mathsFocus");
+    document.querySelector("#mathsScore").setAttribute("class", "mathsFocus");
   } else {
-    document.querySelector("#mathsPoint").setAttribute("class", "");
+    document.querySelector("#mathsScore").setAttribute("class", "");
   }
   if (physical < 0 || !physical) {
     err += "physical must be binger than 0 \n";
     document
-      .querySelector("#physicalPoint")
+      .querySelector("#physicalScore")
       .setAttribute("class", "physicalFocus");
   } else {
-    document.querySelector("#physicalPoint").setAttribute("class", "");
+    document.querySelector("#physicalScore").setAttribute("class", "");
   }
   if (chemistry < 0 || !chemistry) {
     err += "chemistry must be binger than 0 \n";
     document
-      .querySelector("#chemistryPoint")
+      .querySelector("#chemistryScore")
       .setAttribute("class", "chemistryFocus");
   } else {
-    document.querySelector("#chemistryPoint").setAttribute("class", "");
+    document.querySelector("#chemistryScore").setAttribute("class", "");
   }
 
   return err;
@@ -41,9 +41,9 @@ const checkValidate = (name, maths, physical, chemistry) => {
 
 const getInformationOfStudent = (students) => {
   const name = document.querySelector("#name").value;
-  const maths = document.querySelector("#mathsPoint").value;
-  const physical = document.querySelector("#physicalPoint").value;
-  const chemistry = document.querySelector("#chemistryPoint").value;
+  const maths = document.querySelector("#mathsScore").value;
+  const physical = document.querySelector("#physicalScore").value;
+  const chemistry = document.querySelector("#chemistryScore").value;
   const err = checkValidate(name, maths, physical, chemistry);
   const subject = [maths, physical, chemistry];
   if (!err) {
@@ -95,10 +95,10 @@ const showToBrowser = (students) => {
       const currentStudent = getStudentById(studentId);
       showToBrowser(students);
       document.querySelector("#name").value = currentStudent.name;
-      document.querySelector("#mathsPoint").value = currentStudent.subject[0];
-      document.querySelector("#physicalPoint").value =
+      document.querySelector("#mathsScore").value = currentStudent.subject[0];
+      document.querySelector("#physicalScore").value =
         currentStudent.subject[1];
-      document.querySelector("#chemistryPoint").value =
+      document.querySelector("#chemistryScore").value =
         currentStudent.subject[2];
       currentEditStudentId = currentStudent.id;
     });
@@ -122,9 +122,9 @@ const createTdOfTableStudent = (tr, text) => {
 
 const clearTextBox = () => {
   document.querySelector("#name").value = "";
-  document.querySelector("#mathsPoint").value = "";
-  document.querySelector("#physicalPoint").value = "";
-  document.querySelector("#chemistryPoint").value = "";
+  document.querySelector("#mathsScore").value = "";
+  document.querySelector("#physicalScore").value = "";
+  document.querySelector("#chemistryScore").value = "";
 };
 
 const calculatorAVG = (students) => {
@@ -147,9 +147,9 @@ document.querySelector("#save").addEventListener("click", (e) => {
   for (const student of students) {
     if (student.id == currentEditStudentId) {
       const name = document.querySelector("#name").value;
-      const maths = document.querySelector("#mathsPoint").value;
-      const physical = document.querySelector("#physicalPoint").value;
-      const chemistry = document.querySelector("#chemistryPoint").value;
+      const maths = document.querySelector("#mathsScore").value;
+      const physical = document.querySelector("#physicalScore").value;
+      const chemistry = document.querySelector("#chemistryScore").value;
       const err = checkValidate(name, maths, physical, chemistry);
       if (!err) {
         student.name = document.querySelector("#name").value;
