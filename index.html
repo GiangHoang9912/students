@@ -8,32 +8,49 @@
   </head>
 
   <body>
-    <div class="container">
-      <div class="inputData">
-        <h5>Name :</h5>
-        <input id="name" type="text" placeholder="Student Name" />
-        <h5>Maths :</h5>
-        <input id="mathsScore" type="number" placeholder="Maths Score" />
-        <h5>Physical :</h5>
-        <input id="physicalScore" type="number" placeholder="Physical Score" />
-        <h5>Chemistry :</h5>
-        <input
-          id="chemistryScore"
-          type="number"
-          placeholder="Chemistry Score"
-        />
-        <div>
-          <button id="submitForm" type="button">Submit</button>
-          <button id="showAVG" type="button">Show AVG</button>
-          <button id="showBest" type="button">Show Best</button>
-          <button id="save" type="button">Save</button>
+    <form action="" method="post">
+      <div class="container">
+        <div class="inputData">
+          <h5>Name :</h5>
+          <input id="name" type="text" placeholder="Student Name" />
+          <h5>Maths :</h5>
+          <input
+            id="mathsScore"
+            type="number"
+            placeholder="Maths Score"
+            min="0"
+            max="10"
+          />
+          <h5>Physical :</h5>
+          <input
+            id="physicalScore"
+            type="number"
+            placeholder="Physical Score"
+            min="0"
+            max="10"
+          />
+          <h5>Chemistry :</h5>
+          <input
+            id="chemistryScore"
+            type="number"
+            placeholder="Chemistry Score"
+            min="0"
+            max="10"
+          />
+          <div>
+            <button id="submitForm" type="submit">Submit</button>
+            <button id="showAVG" type="submit">Show AVG</button>
+            <button id="showBest" type="submit">Show Best</button>
+            <button id="save" type="submit">Save</button>
+          </div>
+          <h4 id="error"></h4>
         </div>
-        <h4 id="error"></h4>
+        <div id="divShow" class="showStudent">
+          <table id="tbSt"></table>
+        </div>
       </div>
-      <div id="divShow" class="showStudent">
-        <table id="tbSt"></table>
-      </div>
-    </div>
+    </form>
+
     <script type="module" src="./student.js"></script>
   </body>
 </html>
