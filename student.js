@@ -144,6 +144,7 @@ const checkBest = () => {
 };
 
 document.querySelector("#save").addEventListener("click", (e) => {
+  e.preventDefault();
   for (const student of students) {
     if (student.id == currentEditStudentId) {
       const name = document.querySelector("#name").value;
@@ -172,6 +173,7 @@ document.querySelector("#save").addEventListener("click", (e) => {
 });
 
 document.querySelector("#submitForm").addEventListener("click", (e) => {
+  e.preventDefault();
   document.querySelector("#divShow").style.visibility = "unset";
   document.querySelector("#showAVG").style.visibility = "unset";
   const check = getInformationOfStudent(students);
@@ -183,10 +185,12 @@ document.querySelector("#submitForm").addEventListener("click", (e) => {
 });
 
 document.querySelector("#showAVG").addEventListener("click", (e) => {
+  e.preventDefault();
   calculatorAVG(students);
   showToBrowser(students);
 });
 
 document.querySelector("#showBest").addEventListener("click", (e) => {
+  e.preventDefault();
   checkBest();
 });
